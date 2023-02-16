@@ -16,7 +16,7 @@
 
 Установите и запустите memcached.
 
-*Приведите скриншот systemctl status memcached, где будет видно, что memcached запущен.*
+*Приведите скриншот systemctl status memcached, где будет видно, что memcached запущен.*  
 ![Скриншот-1](https://github.com/plusvaldis/sdb-hw/blob/main/11.02-hw/img/Screenshot_1.png)
 ---
 
