@@ -17,7 +17,7 @@
 Установите и запустите memcached.
 
 *Приведите скриншот systemctl status memcached, где будет видно, что memcached запущен.*
-![Скриншот-1](https://github.com/plusvaldis/srlb-hw/blob/main/10.5-hw/img/img1.png)
+![Скриншот-1](https://github.com/plusvaldis/sdb-hw/blob/main/11.02-hw/img/Screenshot_1.png)
 ---
 
 ### Задание 3. Удаление по TTL в Memcached
@@ -26,7 +26,8 @@
 
 *Приведите скриншот, на котором видно, что спустя 5 секунд ключи удалились из базы.*
 
-![Скриншот-1](https://github.com/plusvaldis/srlb-hw/blob/main/10.5-hw/img/img34.png) 
+![Скриншот-2](https://github.com/plusvaldis/sdb-hw/blob/main/11.02-hw/img/Screenshot_3.png)  
+![Скриншот-3](https://github.com/plusvaldis/sdb-hw/blob/main/11.02-hw/img/Screenshot_4.png)
 ---
 
 ### Задание 4. Запись данных в Redis
@@ -35,7 +36,7 @@
 
 *Через redis-cli достаньте все записанные ключи и значения из базы, приведите скриншот этой операции.*
 
-![Скриншот-1](https://github.com/plusvaldis/srlb-hw/blob/main/10.5-hw/img/img2.png)
+![Скриншот-4](https://github.com/plusvaldis/sdb-hw/blob/main/11.02-hw/img/Screenshot_2.png)
 
 ## Дополнительные задания (со звёздочкой*)
 Эти задания дополнительные, то есть не обязательные к выполнению, и никак не повлияют на получение вами зачёта по этому домашнему заданию. Вы можете их выполнить, если хотите глубже разобраться в материале.
@@ -46,4 +47,4 @@
 
 *Приведите скриншот, где будут проделаны все операции и будет видно, что значение key5 стало равно 10.*
 
-![Скриншот-1](https://github.com/plusvaldis/srlb-hw/blob/main/10.5-hw/img/img5.png)
+![Скриншот-5](https://github.com/plusvaldis/sdb-hw/blob/main/11.02-hw/img/Screenshot_5.png)
