@@ -74,7 +74,7 @@ ALTER USER 'sys_test'@'localhost' IDENTIFIED WITH mysql_native_password BY 'pass
 customer         | customer_id
 ```  
   
-выполним запрос через SQL на получение необходимой информации
+выполним запрос через SQL на получение необходимой информации  
  SELECT  
      KU.table_name as TABLENAME  
     ,column_name as PRIMARYKEYCOLUMN  
