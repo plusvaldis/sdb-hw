@@ -75,20 +75,20 @@ customer         | customer_id
 ```  
   
 выполним запрос через SQL на получение необходимой информации
-- SELECT  
--     KU.table_name as TABLENAME  
--    ,column_name as PRIMARYKEYCOLUMN  
--FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS AS TC  
+ SELECT  
+     KU.table_name as TABLENAME  
+    ,column_name as PRIMARYKEYCOLUMN  
+ FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS AS TC  
 
--INNER JOIN INFORMATION_SCHEMA.KEY_COLUMN_USAGE AS KU  
--    ON TC.CONSTRAINT_TYPE = 'PRIMARY KEY'  
--    AND TC.CONSTRAINT_NAME = KU.CONSTRAINT_NAME  
--    AND KU.table_name='actor'  
+ INNER JOIN INFORMATION_SCHEMA.KEY_COLUMN_USAGE AS KU  
+    ON TC.CONSTRAINT_TYPE = 'PRIMARY KEY'  
+    AND TC.CONSTRAINT_NAME = KU.CONSTRAINT_NAME  
+    AND KU.table_name='actor'  
 
--ORDER BY  
--     KU.TABLE_NAME  
--    ,KU.ORDINAL_POSITION  
--;   
+ ORDER BY  
+     KU.TABLE_NAME  
+    ,KU.ORDINAL_POSITION  
+;   
 ```
 Название таблицы | Название первичного ключа
 | actor                      | actor_id            |
