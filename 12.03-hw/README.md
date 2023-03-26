@@ -14,7 +14,7 @@
 ```
 select distinct district from address where district like 'K%a' and district not like '% %'; 
 ```  
-![Скриншот-1](https://github.com/plusvaldis/sdb-hw/blob/main/12.02-hw/img/Screenshot_1.png)
+![Скриншот-1](https://github.com/plusvaldis/sdb-hw/blob/main/12.03-hw/img/Screenshot_1.png)
 ---
 
 
@@ -24,7 +24,7 @@ select distinct district from address where district like 'K%a' and district not
 ```
 SELECT * FROM payment WHERE payment_date BETWEEN  CAST('2005-06-15' AS DATE) AND CAST('2005-06-19' AS DATE) AND amount > 10;  
 ```  
-![Скриншот-2](https://github.com/plusvaldis/sdb-hw/blob/main/12.02-hw/img/Screenshot_2.png)
+![Скриншот-2](https://github.com/plusvaldis/sdb-hw/blob/main/12.03-hw/img/Screenshot_2.png)
 ---
 
 ### Задание 3
@@ -33,7 +33,7 @@ SELECT * FROM payment WHERE payment_date BETWEEN  CAST('2005-06-15' AS DATE) AND
 ```
 SELECT * FROM rental ORDER by rental_date DESC LIMIT 5;  
 ```  
-![Скриншот-3](https://github.com/plusvaldis/sdb-hw/blob/main/12.02-hw/img/Screenshot_3.png)
+![Скриншот-3](https://github.com/plusvaldis/sdb-hw/blob/main/12.03-hw/img/Screenshot_3.png)
 ---
 
 ### Задание 4
@@ -46,7 +46,7 @@ SELECT * FROM rental ORDER by rental_date DESC LIMIT 5;
 ```
 SELECT LOWER(REPLACE(first_name, 'L', 'p')), LOWER(last_name) FROM customer WHERE first_name LIKE 'Willie' OR first_name  LIKE 'Kelly';  
 ```  
-![Скриншот-4](https://github.com/plusvaldis/sdb-hw/blob/main/12.02-hw/img/Screenshot_4.png)
+![Скриншот-4](https://github.com/plusvaldis/sdb-hw/blob/main/12.03-hw/img/Screenshot_4.png)
 ---
 
 
@@ -59,7 +59,7 @@ SELECT LOWER(REPLACE(first_name, 'L', 'p')), LOWER(last_name) FROM customer WHER
 ```
 SELECT email, SUBSTRING_INDEX(email , '@', 1), SUBSTRING_INDEX(email , '@', -1) FROM customer;  
 ```  
-![Скриншот-5](https://github.com/plusvaldis/sdb-hw/blob/main/12.02-hw/img/Screenshot_5.png)
+![Скриншот-5](https://github.com/plusvaldis/sdb-hw/blob/main/12.03-hw/img/Screenshot_5.png)
 ---
 
 ### Задание 6*
@@ -68,5 +68,5 @@ SELECT email, SUBSTRING_INDEX(email , '@', 1), SUBSTRING_INDEX(email , '@', -1) 
 ```
 SELECT email  , SUBSTRING_INDEX(email  , '@', 1), CONCAT ( LEFT(UPPER(SUBSTRING_INDEX(email  , '@', 1)), 1), LOWER(SUBSTR((SUBSTRING_INDEX(email , '@',1)),2))) as '1' , SUBSTRING_INDEX(email  , '@', -1) , CONCAT(LEFT(UPPER(SUBSTRING_INDEX(email  , '@', -1)), 1), LOWER(SUBSTR((SUBSTRING_INDEX(email , '@',-1)),2))) as '2' FROM customer c;  
 ```  
-![Скриншот-6](https://github.com/plusvaldis/sdb-hw/blob/main/12.02-hw/img/Screenshot_6.png)
+![Скриншот-6](https://github.com/plusvaldis/sdb-hw/blob/main/12.03-hw/img/Screenshot_6.png)
 ---
