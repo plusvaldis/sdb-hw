@@ -13,7 +13,7 @@
 Получите уникальные названия районов из таблицы с адресами, которые начинаются на “K” и заканчиваются на “a” и не содержат пробелов.  
 
 select distinct district from address where district like 'K%a' and district not like '% %';  
-
+---
 +-----------+  
 | district  |  
 +-----------+  
@@ -25,7 +25,7 @@ select distinct district from address where district like 'K%a' and district not
 | Kerala    |  
 | Kitaa     |  
 +-----------+  
-
+---
 
 ### Задание 2
 
