@@ -22,7 +22,7 @@ select distinct district from address where district like 'K%a' and district not
 
 Получите из таблицы платежей за прокат фильмов информацию по платежам, которые выполнялись в промежуток с 15 июня 2005 года по 18 июня 2005 года **включительно** и стоимость которых превышает 10.00.  
 ```
-select * from payment where payment_date between '2005-06-15' and '2005-06-18' and amount > 10 order by amount desc;  
+select * from payment where payment_date between '2005-06-15 00:00:00' and '2005-06-18 23:59:59' and amount > 10 order by amount desc; 
 ```  
 ![Скриншот-2](https://github.com/plusvaldis/sdb-hw/blob/main/12.03-hw/img/Screenshot_2.png)
 ---
