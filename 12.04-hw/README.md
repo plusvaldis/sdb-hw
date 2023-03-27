@@ -8,7 +8,8 @@
 - количество пользователей, закрепленных в этом магазине.
 ### Ответ
 ```
-SELECT concat(s.first_name  , ' ', s.last_name) as Имя , c.city,  count(c2.customer_id) as Количество FROM staff s JOIN address a  ON s.address_id = a.address_id JOIN city c  ON a.city_id = c.city_id JOIN store s2 ON s2.store_id = s.store_id JOIN customer c2 ON s2.store_id = c2.store_id GROUP BY s.first_name , s.last_name , c.city HAVING Количество > 300;
+select s.first_name,s.last_name,c.city, count(c2.first_name) from staff s join address a on a.address_id=s.address_id join city c on c.city_id=a.city_id
+join customer c2 on c2.customer_id=c2.customer_id group by c.city,s.first_name,s.last_name having count(c2.customer_id) > 1;
 ```
 ![Скриншот-1](https://github.com/plusvaldis/sdb-hw/blob/main/12.04-hw/img/Screenshot_1.png)
 ---
