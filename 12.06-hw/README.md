@@ -57,4 +57,6 @@ Slave:
 
 ![Скриншот-10](https://github.com/plusvaldis/sdb-hw/blob/main/12.06-hw/img/Screenshot_10.png)  
 
-![Скриншот-9](https://github.com/plusvaldis/sdb-hw/blob/main/12.06-hw/img/Screenshot_9.png)
+![Скриншот-9](https://github.com/plusvaldis/sdb-hw/blob/main/12.06-hw/img/Screenshot_9.png)  
+
+![Скриншот-11](https://github.com/plusvaldis/sdb-hw/blob/main/12.06-hw/img/Screenshot_11.png)
