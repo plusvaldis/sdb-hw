@@ -65,32 +65,32 @@ mysqldump --flush-logs --delete-master-logs --single-transaction --all-databases
 
 Мы не можем просто воспользоваться командой cp потому файлы журналов сейчас используются БД. Поэтому необходимо выполнить команду FLUSH BINARY LOGS которая начнет запись в новый двоичный файл журнала в этом случае все накопленные двоичные файлы журнала могут быть безопасно скопированы. После копирования двоичных файлов журнала они должны быть удалены, чтобы при следующем копировании они не дублировали уже созданные резервные копии данных. Для этого воспользуемся PURGE BINARY LOGS.  
 
-#путь к файлу с двоичными журналами
-binlogs_path=/var/log/mysql/
+#путь к файлу с двоичными журналами  
+binlogs_path=/var/log/mysql/  
 
-#путь к каталогу с бэкапами
-backup_folder=/var/backups/mysql/
+#путь к каталогу с бэкапами  
+backup_folder=/var/backups/mysql/  
 
-#создаем новый двоичный журнал
-sudo mysql -E --execute='FLUSH BINARY LOGS;' mysql
+#создаем новый двоичный журнал  
+sudo mysql -E --execute='FLUSH BINARY LOGS;' mysql  
 
-#получаем список журналов
-binlogs=$(sudo mysql -E --execute='SHOW BINARY LOGS;' mysql | grep Log_name | sed -e 's/Log_name://g' -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')
+#получаем список журналов  
+binlogs=$(sudo mysql -E --execute='SHOW BINARY LOGS;' mysql | grep Log_name | sed -e 's/Log_name://g' -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')  
 
-#берем все, кроме последнего
-binlogs_without_Last=`echo "${binlogs}" | head -n -1`
+#берем все, кроме последнего  
+binlogs_without_Last=`echo "${binlogs}" | head -n -1`  
 
-#отдельно последний, который не нужно копировать
-binlog_Last=`echo "${binlogs}" | tail -n -1`
+#отдельно последний, который не нужно копировать  
+binlog_Last=`echo "${binlogs}" | tail -n -1`  
 
-#формируем полный путь 
-binlogs_fullPath=`echo "${binlogs_without_Last}" | xargs -I % echo $binlogs_path%`
+#формируем полный путь  
+binlogs_fullPath=`echo "${binlogs_without_Last}" | xargs -I % echo $binlogs_path%`  
 
-#сжимаем журналы
-zip $  backup_folder/  $(date +%d-%m-%Y_%H-%M-%S).zip $binlogs_fullPath
+#сжимаем журналы  
+zip $  backup_folder/  $(date +%d-%m-%Y_%H-%M-%S).zip $binlogs_fullPath  
 
-#удаляем сохраненные файлы журналов
-echo $binlog_Last | xargs -I % sudo mysql -E --execute='PURGE BINARY LOGS TO "%";' mysql
+#удаляем сохраненные файлы журналов  
+echo $binlog_Last | xargs -I % sudo mysql -E --execute='PURGE BINARY LOGS TO "%";' mysql  
 
 
 Можно написать скрипт который все это будет выполнять, а для регулярного использования используем cron.  
