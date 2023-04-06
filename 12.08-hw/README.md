@@ -95,7 +95,7 @@ binlogs_fullPath=`echo "${binlogs_without_Last}" | xargs -I % echo $binlogs_path
 
 #сжимаем журналы
 
-zip $backup_folder/$(date +%d-%m-%Y_%H-%M-%S).zip $binlogs_fullPath
+zip $  backup_folder/  $(date +%d-%m-%Y_%H-%M-%S).zip $binlogs_fullPath
 
 #удаляем сохраненные файлы журналов
 
