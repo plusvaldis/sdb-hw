@@ -73,7 +73,69 @@ select * from test_table;
 *В качестве результата вашей работы пришлите скришоты:*
 
 *1) Скриншот созданной базы данных.*
-*2) Код Terraform, создающий базу данных.*
+*2) Код Terraform, создающий базу данных.*  
+
+![Скриншот-5](https://github.com/plusvaldis/sdb-hw/blob/main/12.09-hw/img/Screenshot_5.png)  
+![Скриншот-6](https://github.com/plusvaldis/sdb-hw/blob/main/12.09-hw/img/Screenshot_6.png)  
+![Скриншот-7](https://github.com/plusvaldis/sdb-hw/blob/main/12.09-hw/img/Screenshot_7.png)  
+![Скриншот-8](https://github.com/plusvaldis/sdb-hw/blob/main/12.09-hw/img/Screenshot_8.png)  
+![Скриншот-9](https://github.com/plusvaldis/sdb-hw/blob/main/12.09-hw/img/Screenshot_4.png)  
+
+
+```terraform
+terraform {
+  required_providers {
+    yandex = {
+      source = "yandex-cloud/yandex"
+    }
+  }
+}
+
+resource "yandex_mdb_postgresql_cluster" "test" {
+  name        = "test"
+  environment = "PRODUCTION"
+  network_id  = "enp5u6r5ok457noi05l1"
+  folder_id   = "enp5u6r5ok457noi05l1"
+
+  config {
+    version = 15
+    resources {
+      resource_preset_id = "m2.micro"
+      disk_type_id       = "network-ssd"
+      disk_size          = 16
+    }
+
+  }
+
+
+
+  host {
+    zone      = "ru-central1-a"
+    subnet_id = "e9baq8ug66jvt0eeln90"
+    assign_public_ip = "true"
+  }
+  host {
+    zone      = "ru-central1-b"
+    subnet_id = "e2lon7oad3njmhlmqann"
+    assign_public_ip = "true"
+  }
+}
+
+resource "yandex_vpc_network" "default" {
+  name = "default"
+}
+
+resource "yandex_vpc_subnet" "ru-central1-a" {
+  zone           = "ru-central1-a"
+  network_id     = "enp5u6r5ok457noi05l1"
+  v4_cidr_blocks = ["10.128.0.0/24"]
+}
+resource "yandex_vpc_subnet" "ru-central1-b" {
+  zone           = "ru-central1-b"
+  network_id     = "enp5u6r5ok457noi05l1"
+  v4_cidr_blocks = ["10.129.0.0/24"]
+}
+```
 
 ---
 
