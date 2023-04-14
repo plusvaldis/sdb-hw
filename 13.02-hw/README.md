@@ -10,8 +10,8 @@
 
 *В качестве ответа  пришлите снимки экрана домашнего каталога пользователя с исходными и зашифрованными данными.*  
 
-![Скриншот-1](https://github.com/plusvaldis/sdb-hw/blob/main/13.01-hw/img/Screenshot_1.png)  
-![Скриншот-2](https://github.com/plusvaldis/sdb-hw/blob/main/13.01-hw/img/Screenshot_2.png)  
+![Скриншот-1](https://github.com/plusvaldis/sdb-hw/blob/main/13.02-hw/img/Screenshot_1.png)  
+![Скриншот-2](https://github.com/plusvaldis/sdb-hw/blob/main/13.02-hw/img/Screenshot_2.png)  
 
 
 ### Задание 2
@@ -22,7 +22,7 @@
 
 *В качестве ответа пришлите снимки экрана с поэтапным выполнением задания.*  
 
-![Скриншот-2](https://github.com/plusvaldis/sdb-hw/blob/main/13.01-hw/img/Screenshot_3.png)  
+![Скриншот-2](https://github.com/plusvaldis/sdb-hw/blob/main/13.02-hw/img/Screenshot_3.png)  
 
 ## Дополнительные задания (со звёздочкой*)
 
